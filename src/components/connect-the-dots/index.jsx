@@ -43,7 +43,7 @@ export default function ConnectTheDots() {
 
     function handleclick(currentvalue) {
         let cpydots = [...dots];
-        if (dots[currentvalue] != 1) {
+        if (dots[currentvalue] !== 1) {
             SetXTurn(!isXTurn);
             cpydots[currentvalue] = 1;
         }
@@ -58,7 +58,7 @@ export default function ConnectTheDots() {
         console.log(cpydots)
     }
     useEffect(() => {
-        if (squares.filter(item => item == '').length != 0) {
+        if (squares.filter(item => item === '').length !== 0) {
             setStatus(`${isXTurn ? `1️⃣${player1Name}` : `2️⃣${player2Name}`} TURN!!`)
             setStatus2(`${player1Name}:${xCount}  ${player2Name}:${yCount}`)
         }
@@ -99,8 +99,8 @@ export default function ConnectTheDots() {
         ];
         for (let i = 0; i < winpattern.length; i++) {
             const [a, b, c, d] = winpattern[i];
-            if (dots[a] == 1 && dots[b] == 1 && dots[c] == 1 && dots[d] == 1) {
-                if (cpySquares[i] == '') {
+            if (dots[a] === 1 && dots[b] === 1 && dots[c] === 1 && dots[d] === 1) {
+                if (cpySquares[i] === '') {
                     cpySquares[i] = isXTurn ? 'X' : 'O';
                     SetXTurn(isXTurn);
                 }
@@ -110,10 +110,10 @@ export default function ConnectTheDots() {
         let countx = 0
         let county = 0
         for (let j = 0; j < cpySquares.length; j++) {
-            if (cpySquares[j] == 'X') {
+            if (cpySquares[j] === 'X') {
                 countx++;
             }
-            if (cpySquares[j] == 'O') {
+            if (cpySquares[j] === 'O') {
                 county++;
             }
         }
