@@ -74,7 +74,7 @@ export default function ConnectTheDots() {
             setStatus(`This is a Draw `)
             setStatus2(`${player1Name}:${xCount} ${player2Name}:${yCount}`)
         }
-    }, [squares, isXTurn, player1Name, player2Name])
+    }, [squares, isXTurn, player1Name, player2Name, yCount, xCount])
     function getwinner(dots) {
         let cpySquares = [...squares];
         const winpattern = [[0, 9, 4, 5],
