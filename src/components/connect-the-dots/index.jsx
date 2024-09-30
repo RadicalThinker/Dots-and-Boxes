@@ -81,7 +81,8 @@ export default function ConnectTheDots() {
         }
         else {
             setStatus(`This is a Draw `)
-            setStatus2(`${player1Name}:${xCount} ${player2Name}:${yCount}`)
+            setStatus2(`${xCount}`)
+            setStatus3(`${yCount}`)
         }
     }, [squares, isXTurn, player1Name, player2Name, xCount, yCount])
 
