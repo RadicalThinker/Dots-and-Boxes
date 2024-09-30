@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Nabla:EDPT,EHLT@65,0&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
+
 .return{
     height: 100vh;
     width: 100vw;
@@ -102,15 +107,15 @@ img {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 60px;
-    border: 6px solid blue;
-    background-color: rgb(235, 240, 218);
+    margin-top: 30px;
     border-radius: 10%;
     width: 500px;
     margin-right: 100px;
-    /* backdrop-filter: blur(100000px); */
+    background-color: transparent;
+    position: relative;
+    background-color: #F7E8D4;
+    border: 3px solid black;
 }
-
 .bar1 {
     all: unset;
     width: 77px;
@@ -169,13 +174,14 @@ img {
 
 .square {
     all:unset;
-    border: 0px solid white;
+    backdrop-filter: blur(10px);
     font-size: 40px;
-    height: 80px;
+    height: 60px;
     padding: 0px;
     text-align: center;
     width: 79px;
     cursor: pointer;
+    
 }
 
 .dots {
@@ -190,17 +196,21 @@ img {
 
 .game{
     height: 140vh;
-    border: solid #1DA1F2;
     border-top: none;
-    backdrop-filter: blur(6px);
+    backdrop-filter: brightness(150%);
     width: 90vw;
     margin-left: 60px;
 }
 .wrapper {
-    width: 100vw;
+    position: relative;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(images/woodenback.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -8;
 }
 .backimg{
     position: absolute;
@@ -208,7 +218,8 @@ img {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-image: url(top-view-society-games-with-mock-up-notepad.jpg);
+    background-image: url(images/woodenback.jpg);
+    filter:brightness(62%);
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     z-index: -1;
@@ -223,83 +234,143 @@ img {
 
 .status1 {
     /* border: 6px solid green; */
-    backdrop-filter: blur(10px);
-    color: rgb(8, 148, 8);
-    margin: 30px;
+    position: relative;
+    width: 42%;
+    height: 100%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: rgb(236, 0, 0);
+    margin: 3px;
     padding: 10px;
     background-color: peachpuff;
     border: 6px solid black;
+    margin-right: 1px;
 }
 .status2 {
     /* border: 6px solid green; */
+    position: relative;
+    text-transform: uppercase;
+    width: 42%;
+    height: 100%;
+    font-size: 1.5rem;
+    /* overflow: scroll; */
+    /* justify-items: center; */
     backdrop-filter: blur(10px);
-    color: rgb(7, 7, 7);
-    background-color: black;
-    color: white;
-    margin: 0;
+    color: rgb(255, 11, 11);
+    margin: 3px;
     padding: 10px;
+    background-color: peachpuff;
+    border: 6px solid black;
+    margin-left: 1px;
 }
 hr{
     margin: 0;
     padding: 0;
 }
 .score{
-    background-color: black;
+    background-color:#a7875e;
     color: white;
     margin: 0;
-    padding: 10px;
+    display: flex;
+    padding: 6px;
+    position: relative;
+    border: 1px solid black;
+    font-family: "Reem Kufi Fun", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
-
+.turn{
+    text-transform: capitalize;
+    backdrop-filter: blur(6px);
+    border: 1px solid black;
+    height: 18vh;
+    /* width: 60vh; */
+    align-content: center;
+    text-align: center;
+    border-radius: 20%;
+    margin-bottom: 60px;
+    animation: flicker 0.3s linear forwards;
+    font-family: "Reem Kufi Fun", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
 .status-box {
-    /* border: 6px solid ; */
-    width: 270px;
-    /* background-color: palegoldenrod; */
+    width: 420px;
+}
+.score-word{
+    background-color: black;
+    font-size: 3rem;
+    border: 1px solid black;
+    border-bottom: none;
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .restart{
     width: 100px;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
     backdrop-filter: blur(10px);
-    background-color: rgb(86, 202, 231);
+    background-color: rgb(255, 255, 255);
     border-radius: 30%;
     font-family:poppins;
     border: 3px solid black;
     box-sizing: border-box;
-    box-shadow: 6px 6px 6px rgb(230, 231, 235);
+    box-shadow: 6px 6px 6px rgb(99, 129, 252);
 }
 .restart:hover{
     cursor: pointer;
-    background-color: white;
+    background-color: rgb(99, 129, 252);;
     transition: all 0.5s;
-    box-shadow: 6px 6px 6px rgb(99, 129, 252);
+    box-shadow: 6px 6px 6px rgb(255, 255, 255);
 }
-/* .form {
-    border: 10px solid red;
-    border-radius: 20%;
-    width: 300px;
-    height: 300px;
-    align-content: center;
-    background-color: yellowgreen;
-    font-weight: bolder
-} */
 
-/* .form-box { */
-/* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
-    background-color: blue; */
-/* } */
+.name{
+    /* padding: 20px; */
+    background-color: #000000c0;
+    border-bottom: 1px solid black; 
+    font-size: 3rem;
+    font-family: "Nabla", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "EDPT" 64,
+      "EHLT" 12;
+}
 
-/* .submit {
-    transition-duration: 0.6s;
-    width: 80px;
-    border-radius: 40%;
-} */
-
-/* .submit:hover {
-    background-color: #04AA6D;
-    color: white;
-} */
+@keyframes flicker {
+    0%, 100% {
+        color: #000000;
+    }
+    10% {
+        color: #ff0000;
+    }
+    20% {
+        color: #00ff00;
+    }
+    30% {
+        color: #0000ff;
+    }
+    40% {
+        color: #ffff00;
+    }
+    50% {
+        color: #ff00ff;
+    }
+    60% {
+        color: #00ffff;
+    }
+    70% {
+        color: #ff0000;
+    }
+    80% {
+        color: #00ff00;
+    }
+    90% {
+        color: #0000ff;
+    }
+}
