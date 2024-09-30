@@ -1,0 +1,1 @@
+1. mai backimg ka position relative krke bhi usko background me laa skta tha . kyunki relative positioning does not effect others

@@ -68,8 +68,6 @@ export default function ConnectTheDots() {
             setStatus(`${isXTurn ? `${player1Name}` : `${player2Name}`} TURN!!`)
             setStatus2(`${xCount} `)
             setStatus3(`${yCount} `)
-            setStatus(`${isXTurn ? `1️⃣${player1Name}` : `2️⃣${player2Name}`} TURN!!`)
-            setStatus2(`${player1Name}:${xCount}  ${player2Name}:${yCount}`)
         }
         else if (xCount > yCount) {
             setStatus(`winner is ${player1Name}`)
@@ -86,6 +84,7 @@ export default function ConnectTheDots() {
             setStatus2(`${player1Name}:${xCount} ${player2Name}:${yCount}`)
         }
     }, [squares, isXTurn, player1Name, player2Name, xCount, yCount])
+
     function getwinner(dots) {
         let cpySquares = [...squares];
         const winpattern = [[0, 9, 4, 5],
