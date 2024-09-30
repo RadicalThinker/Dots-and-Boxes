@@ -1,1 +1,1 @@
-https://66f55fc1106bea00085feaf0--leafy-granita-9241fd.netlify.app/
+https://66fb0003fc37711e4eb57be2--deluxe-kheer-33b895.netlify.app/
