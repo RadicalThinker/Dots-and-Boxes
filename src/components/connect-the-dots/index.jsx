@@ -68,6 +68,8 @@ export default function ConnectTheDots() {
             setStatus(`${isXTurn ? `${player1Name}` : `${player2Name}`} TURN!!`)
             setStatus2(`${xCount} `)
             setStatus3(`${yCount} `)
+            setStatus(`${isXTurn ? `1️⃣${player1Name}` : `2️⃣${player2Name}`} TURN!!`)
+            setStatus2(`${player1Name}:${xCount}  ${player2Name}:${yCount}`)
         }
         else if (xCount > yCount) {
             setStatus(`winner is ${player1Name}`)
