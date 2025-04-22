@@ -26,8 +26,8 @@ function Turn({status}){
 export default function ConnectTheDots() {
     const [game, setGame] = useState(false);
     const [form, setForm] = useState(true);
-    const [player1Name, setPlayer1Name] = useState();
-    const [player2Name, setPlayer2Name] = useState();
+    const [player1Name, setPlayer1Name] = useState('');
+    const [player2Name, setPlayer2Name] = useState('');
     const [dots, setDots] = useState(Array(40).fill(0));
     console.log(dots);
     const [squares, setSquares] = useState(Array(16).fill(''));
@@ -41,8 +41,8 @@ export default function ConnectTheDots() {
     function handleSubmit(event) {
         event.preventDefault();
         const formData = new FormData(event.target);
-        setPlayer1Name(formData.get('player1'));
-        setPlayer2Name(formData.get('player2'));
+        setPlayer1Name(formData.get('player1') || 'Player 1');
+        setPlayer2Name(formData.get('player2') || 'Player 2');
         setGame(true);
         setForm(false);
     }
@@ -142,22 +142,22 @@ export default function ConnectTheDots() {
     }
 
     return (
-        <div >
-            {form && (<div className='body'>
-                <div className='form-box'>
-                    <div className="inputs">
-                        <h1>Dots-And-Boxes</h1>
-                        <form className='form' onSubmit={handleSubmit}>
-                            <label for="player1" aria-placeholder='example: aditya'>Player 1 Name:</label><br />
-                            <input type="text" id="player1" name="player1" placeholder='example: aditya' /><br /><br />
-                            <label for="player2">Player 2 Name:</label><br />
-                            <input type="text" id="player2" name="player2" placeholder='example: harshita' /><br /><br />
-
-
-                            <input type="submit" className="submit" value="Submit" />
-                        </form></div>
+        <div>
+            {form && (
+                <div className='body'>
+                    <div className='form-box'>
+                        <div className="inputs">
+                            <h1>Dots-And-Boxes</h1>
+                            <form className='form' onSubmit={handleSubmit}>
+                                <label htmlFor="player1">Player 1 Name:</label><br />
+                                <input type="text" id="player1" name="player1" placeholder='example: aditya' /><br /><br />
+                                <label htmlFor="player2">Player 2 Name:</label><br />
+                                <input type="text" id="player2" name="player2" placeholder='example: harshita' /><br /><br />
+                                <input type="submit" className="submit" value="Submit" />
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
             )}
             {game && (
                 <div className="return">
@@ -165,8 +165,7 @@ export default function ConnectTheDots() {
                     <div className="game">
                         <div className="name">Dots-And-Boxes</div>
                         <div className="wrapper">
-                            <div className="backimg2"></div>
-                            <div className="dots-container bottom">
+                            <div className="dots-container">
                                 <div className="row">
                                     <div className="btn top">
                                         <Dots /> <Bar value={0} onClick={() => handleclick(0)} />
@@ -245,13 +244,13 @@ export default function ConnectTheDots() {
                                 <Turn status={status} />
                                 <hr />
                                 <div className='score-word'>SCORE</div>
-                                <h1 className='score'> 
+                                <div className='score'> 
                                     <h1 className="status1">{player1Name} <br /> 
                                     {status2}</h1>
                                     <h1 className="status2">{player2Name} <br /> 
-                                    {status3}</h1></h1><hr />
-
-
+                                    {status3}</h1>
+                                </div>
+                                <hr />
                             </div>
                         </div>
                         <div className="super-button">
@@ -259,9 +258,7 @@ export default function ConnectTheDots() {
                         </div>
                     </div>
                 </div>
-            )
-
-            }
+            )}
         </div>
     )
 }
